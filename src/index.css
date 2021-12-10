@@ -109,13 +109,9 @@ body, .app {
   padding: 0px 0px 20px 0px;
 }
 
-.form-container {
-  display: block;
-  text-align: center;
-}
-
 .select-form { /* source: https://codepen.io/vkjgr/pen/VYMeXp */
   /* styling */
+  width: 100%;
   background-color: white;
   border: thin solid blue;
   border-radius: 4px;
