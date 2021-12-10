@@ -55,12 +55,12 @@ body, .app {
 
 /* Books List */
 .list-items-grid {
-  display: grid;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  padding-top: 10px;
+  padding: 20px;
 }
 
 .list-item {
@@ -71,7 +71,7 @@ body, .app {
   padding: 20px 20px;
   background-color: white;
   border-radius: 15px;
-  min-width: min-content;
+  margin: 10px;
 }
 
 .book-info-container {
@@ -79,8 +79,8 @@ body, .app {
 }
 
 .book-img {
-  width: 200px;
-  height: 250px;
+  width: 225px;
+  height: 330px;
   border-radius: 15px;
   margin-bottom: 20px;
   margin: auto;
@@ -91,6 +91,7 @@ body, .app {
   display: flex;
   margin: 0px;
   font-weight: bold;
+  width: 200px;
 }
 
 .select-form {
