@@ -16,7 +16,7 @@ class ListBooks extends Component {
                 "title": "Learning Web Development with React and Bootstrap",
                 "author": "Harmeet Singh",
                 "averageRating": 3.5,
-                "thumbnail": "http://books.google.com/books/content?id=evuwdDLfAyYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=sJf1vQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
                 "shelf": "wantToRead"
             },
             {
@@ -31,6 +31,27 @@ class ListBooks extends Component {
                 "author": "Stephen King",
                 "averageRating": 3.5,
                 "thumbnail": "http://books.google.com/books/content?id=jAUODAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+                "shelf": "currentlyReading"
+            },
+            {
+                "title": "The Cuckoo's Calling",
+                "author": "Robert Galbraith",
+                "averageRating": 3.5,
+                "thumbnail": "http://books.google.com/books/content?id=evuwdDLfAyYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+                "shelf": "currentlyReading"
+            },
+            {
+                "title": "React",
+                "author": "Nils Hartmann",
+                "averageRating": 3.5,
+                "thumbnail": "http://books.google.com/books/content?id=IOejDAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+                "shelf": "wantToRead"
+            },
+            {
+                "title": "Satire TV",
+                "author": "Jonathan Gray",
+                "averageRating": 3.5,
+                "thumbnail": "http://books.google.com/books/content?id=1wy49i-gQjIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
                 "shelf": "currentlyReading"
             },
         ]
