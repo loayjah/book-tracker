@@ -37,19 +37,21 @@ class ListBooks extends Component {
     }
 
     render() {
-        
+
         return (
             <div className='list-items-grid'>
                 { this.state.books.map(book => {
                         return(
                     <div className='list-item'>
                         <div className='book-info-container'>
-                            <img className='book-img' src={book.thumbnail}></img>
-                            <div className='book-header'>
-                                <h3 className='book-title'>{book.title}</h3>
-                                <p className='book-rating'>{book.averageRating}</p>
+                            <div className='info-wrapper'>
+                                <img className='book-img' src={book.thumbnail}></img>
+                                <div className='book-header'>
+                                    <h3 className='book-title'>{book.title}</h3>
+                                    <p className='book-rating'>{book.averageRating}</p>
+                                </div>
+                                <p className='book-author'>By {book.author}</p>
                             </div>
-                            <p className='book-author'>By {book.author}</p>
                             <div className='form-container'>
                                 <form>
                                     <select className='select-form' name="labels" id="lables">
