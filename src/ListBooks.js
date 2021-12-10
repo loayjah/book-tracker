@@ -45,14 +45,16 @@ class ListBooks extends Component {
                     <p className='book-rating'>4.3</p>
                 </div>
                 <p className='book-author'>By William Shotts</p>
-                <form className='select-form'>
-                    <select name="labels" id="lables">
-                        <option value="currently-reading">Currently reading</option>
-                        <option value="want-to-read">Want to read</option>
-                        <option value="read">Read</option>
-                        <option value="none">None</option>
-                    </select>
-                </form>                    
+                <div className='form-container'>
+                    <form>
+                        <select className='select-form' name="labels" id="lables">
+                            <option value="currently-reading">Currently reading</option>
+                            <option value="want-to-read">Want to read</option>
+                            <option value="read">Read</option>
+                            <option value="none">None</option>
+                        </select>
+                    </form>  
+                </div>                  
             </div>
         </div>);
         }
