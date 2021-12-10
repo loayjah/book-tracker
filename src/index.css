@@ -92,6 +92,23 @@ body, .app {
   font-weight: bold;
 }
 
+.book-title, .book-rating {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  align-self: center;
+}
+
+.book-title {
+  padding: 20px 20px 5px 0px;
+}
+
+.book-author {
+  align-self: flex-start;
+  margin: 0;
+  padding: 0px 0px 20px 0px;
+}
+
 .form-container {
   display: block;
   text-align: center;
@@ -128,21 +145,4 @@ background-size:
   5px 5px,
   1px 1.5em;
 background-repeat: no-repeat;
-}
-
-.book-title, .book-rating {
-  margin: 0px;
-  padding: 0px;
-  font-size: 16px;
-  align-self: center;
-}
-
-.book-title {
-  padding: 20px 20px 5px 0px;
-}
-
-.book-author {
-  align-self: flex-start;
-  margin: 0;
-  padding: 0px 0px 20px 0px;
 }
