@@ -51,3 +51,64 @@ body, .app {
   margin: 0;
   font-size: 1.3rem;
 }
+
+
+/* Books List */
+.list-items-grid {
+  display: grid;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  align-content: center;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding: 20px 20px;
+  background-color: white;
+  border-radius: 15px;
+  min-width: min-content;
+}
+
+.book-info-container {
+  width: 100%;
+}
+
+.book-img {
+  width: 200px;
+  height: 250px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  margin: auto;
+  display: block;
+}
+
+.book-header {
+  display: flex;
+  margin: 0px;
+  font-weight: bold;
+}
+
+.select-form {
+  text-align: center;
+}
+
+.book-title, .book-rating {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  align-self: center;
+}
+
+.book-title {
+  margin-right: 15px;
+}
+
+
+.book-author {
+  align-self: flex-start;
+}
