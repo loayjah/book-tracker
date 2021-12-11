@@ -3,34 +3,13 @@ import React, { Component } from 'react';
 
 class ListBooks extends Component {
 
-    handleChange = (event, book) => {
-
-        this.setState(prevState => ({
-
-            books: prevState.books.map(
-              b => b.title === book.title ? { ...b, shelf: event.target.value } : b
-            )
-          
-          }))
-
-          this.setState(prevState => ({
-            books: prevState.books.map(
-              b => b.title === book.title ? { ...b, shelf: event.target.value } : b
-            ),
-
-            value: prevState.books.map(
-                b => b.title === book.title ? b.shelf : ""
-              ),
-          
-          }))
-      };
-
     isSelected = (thisValue, bookShelf) => {
         return bookShelf === thisValue ? 'true' : undefined;
     }
 
     render() {
-        const { books } = this.props
+        
+        const { books, onChangeShelf } = this.props
 
         return (
             <div className='list-items-grid'>
@@ -48,7 +27,7 @@ class ListBooks extends Component {
                             </div>
                             <div className='form-container'>
                                 <form>
-                                    <select onChange={(e) => this.handleChange(e, book)} className='select-form' name="labels" id="lables">
+                                    <select onChange={(e) => onChangeShelf(e, book)} className='select-form' name="labels" id="lables">
                                         <option value="currentlyReading" selected={this.isSelected('currentlyReading', book.shelf)}>Currently reading</option>
                                         <option value="wantToRead" selected={this.isSelected('wantToRead', book.shelf)}>Want to read</option>
                                         <option value="read" selected={this.isSelected('read', book.shelf)}>Read</option>
