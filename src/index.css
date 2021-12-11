@@ -145,3 +145,28 @@ body, .app {
   1px 1.5em;
   background-repeat: no-repeat;
 }
+
+/* Navigation tabs source: https://css-tricks.com/design-considerations-text-images/*/
+.tab-bottom-line {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: red;
+  transition: all ease 0.2s;
+}
+
+.tab-links {
+  display: flex;
+}
+
+.link {
+  flex-grow: 1;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.nav-tabs-container {
+    position: relative;
+    text-align: center;
+}

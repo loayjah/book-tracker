@@ -3,6 +3,8 @@ import './App.css';
 import HeaderComponent from './HeaderComponent'
 import ListBooks from './ListBooks';
 import React, { Component } from 'react';
+import NavigationTabs from './NavigationTabs';
+
 
 class App extends Component {
 
@@ -58,6 +60,7 @@ class App extends Component {
             "shelf": "currentlyReading"
         },
     ], value: '?',
+    currentTab: 'currentlyReading'
 }
 
 onChangeShelf = (event, book) => {
@@ -73,15 +76,36 @@ onChangeShelf = (event, book) => {
   }))
 };
 
+onClickNav = (value) => {
+  this.setState({
+    currentTab: value
+  }, ()=> {} /* callback for instance update of state*/ )
+
+}
+
+getShowingBooks = () => {
+
+  if (this.state.currentTab !== 'all') {
+    return this.state.books.filter((b) => (
+       b.shelf === this.state.currentTab
+    ))
+  }
+
+  return this.state.books;
+}
+
+
+
   render() {
     return (
     <div>
       <HeaderComponent />
-      <ListBooks books={this.state.books}
+      <NavigationTabs onClickNav={this.onClickNav}/>
+      <ListBooks books={this.getShowingBooks()}
                 onChangeShelf={this.onChangeShelf} />
     </div>
     )}
-
+    
 }
 
 export default App;
