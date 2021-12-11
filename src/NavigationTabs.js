@@ -3,8 +3,6 @@ import { useTabs } from "react-headless-tabs";
 
 export default function NavigationTabs(props) {
 
-    const [currentTab, setTab] = useState('All');
-
     const allItems = [{'All': 'all',
                     'Currently reading': 'currentlyReading',
                     'Want to read': 'wantToRead',
@@ -12,6 +10,8 @@ export default function NavigationTabs(props) {
     
     const items = allItems.map((item) => (Object.keys(item)))[0]
 
+    const [currentTab, setTab] = useState(items[1]);
+    
     const [selectedTab, setSelectedTab] = useTabs(items, items[1]);
 
     const changeTab = (e, item) => {
