@@ -4,6 +4,7 @@ import HeaderComponent from './HeaderComponent'
 import ListBooks from './ListBooks';
 import React, { Component } from 'react';
 import NavigationTabs from './NavigationTabs';
+import SearchPage from './SearchPage';
 
 
 class App extends Component {
@@ -60,7 +61,8 @@ class App extends Component {
             "shelf": "currentlyReading"
         },
     ], value: '?',
-    currentTab: 'currentlyReading'
+    currentTab: 'currentlyReading',
+    screen: 'search'
 }
 
 onChangeShelf = (event, book) => {
@@ -97,12 +99,19 @@ getShowingBooks = () => {
 
 
   render() {
+    if (this.state.screen === 'home') {
     return (
     <div>
       <HeaderComponent />
       <NavigationTabs onClickNav={this.onClickNav}/>
       <ListBooks books={this.getShowingBooks()}
                 onChangeShelf={this.onChangeShelf} />
+    </div>
+    )}
+    return (
+    <div>
+      <SearchPage books={this.state.books}
+                  onChangeShelf={this.onChangeShelf} />
     </div>
     )}
     

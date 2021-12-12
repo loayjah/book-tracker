@@ -170,3 +170,45 @@ body, .app {
     position: relative;
     text-align: center;
 }
+
+/*Back Button*/
+.back-link {
+  background-image: url("data:image/svg+xml,%0A%3Csvg fill='%23fff' width='200px' height='200px' viewBox='0 0 200 200' data-name='Layer 1' id='Layer_1' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle/%3E%3Cpath d='M160,89.75H56l53-53a9.67,9.67,0,0,0,0-14,9.67,9.67,0,0,0-14,0l-56,56a30.18,30.18,0,0,0-8.5,18.5c0,1-.5,1.5-.5,2.5a6.34,6.34,0,0,0,.5,3,31.47,31.47,0,0,0,8.5,18.5l56,56a9.9,9.9,0,0,0,14-14l-52.5-53.5H160a10,10,0,0,0,0-20Z'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 45px;
+  height: 45px;
+  z-index: 100;
+  background-size: 45px 45px;
+}
+
+.back-link:hover {
+  cursor: pointer;
+}
+
+/* Search Box */
+.search-container {
+  text-align: center;
+  padding-top: 64px;
+}
+
+.search-input {
+      width: 50%;
+      padding: 12px 65px;
+      background-color: white;
+      line-height: 28px;
+      font-size: 16px;
+      height: 64px;
+      color: #575756;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.06);
+      background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 16 16' style='enable-background:new 0 0 487.95 487.95;' xml:space='preserve'%3E%3Cpath fill-rule='evenodd' fill='%239e9ea7' clip-rule='evenodd' d='M10.6002 12.0498C9.49758 12.8568 8.13777 13.3333 6.66667 13.3333C2.98477 13.3333 0 10.3486 0 6.66667C0 2.98477 2.98477 0 6.66667 0C10.3486 0 13.3333 2.98477 13.3333 6.66667C13.3333 8.15637 12.8447 9.53194 12.019 10.6419C12.0265 10.6489 12.0338 10.656 12.0411 10.6633L15.2935 13.9157C15.6841 14.3063 15.6841 14.9394 15.2935 15.33C14.903 15.7205 14.2699 15.7205 13.8793 15.33L10.6269 12.0775C10.6178 12.0684 10.6089 12.0592 10.6002 12.0498ZM11.3333 6.66667C11.3333 9.244 9.244 11.3333 6.66667 11.3333C4.08934 11.3333 2 9.244 2 6.66667C2 4.08934 4.08934 2 6.66667 2C9.244 2 11.3333 4.08934 11.3333 6.66667Z'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 18px 18px;
+      background-position: 4% center;
+      border-radius: 8px;
+      border: 1px solid #fff;
+      transition: all 250ms ease-in-out;
+      outline: none;
+}
