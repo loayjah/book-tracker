@@ -24,6 +24,8 @@ class SearchPage extends Component {
 
         return (
             <div>
+                <div className='back-link'>
+                </div>
                 <HeaderComponent />
                 <div class="search-container">
                     <input class="search-input" type="text" placeholder="Search..."
