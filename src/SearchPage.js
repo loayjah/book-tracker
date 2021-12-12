@@ -4,15 +4,33 @@ import ListBooks from './ListBooks';
 
 
 class SearchPage extends Component {
+    state = {
+        query: ''
+    }
+
+    updateQuery = (query) => {
+        this.setState({ query: query })
+    }
+
     render() {
-        console.log(this.props);
+        const { query } = this.state;
+        const { books } = this.props;
+
+        const showingBooks = query === ''
+        ? books
+        : books.filter((b) => (
+            b.title.toLowerCase().includes(query.toLowerCase())
+        ))
+
         return (
             <div>
                 <HeaderComponent />
                 <div class="search-container">
-                    <input class="search-input" type="text" placeholder="Search..."/>
+                    <input class="search-input" type="text" placeholder="Search..."
+                           value={query}
+                           onChange={(event) => this.updateQuery(event.target.value)}/>
                 </div>
-                <ListBooks books={this.props.books}
+                <ListBooks books={showingBooks}
                 onChangeShelf={this.props.onChangeShelf} />
             </div>
         )
