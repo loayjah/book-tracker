@@ -12,6 +12,8 @@ class SearchPage extends Component {
                 <div class="search-container">
                     <input class="search-input" type="text" placeholder="Search..."/>
                 </div>
+                <ListBooks books={this.props.books}
+                onChangeShelf={this.props.onChangeShelf} />
             </div>
         )
     }
