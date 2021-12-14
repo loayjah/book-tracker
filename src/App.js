@@ -62,7 +62,7 @@ class App extends Component {
         },
     ], value: '?',
     currentTab: 'currentlyReading',
-    screen: 'search'
+    screen: 'home'
 }
 
 onChangeShelf = (event, book) => {
@@ -102,6 +102,8 @@ getShowingBooks = () => {
     if (this.state.screen === 'home') {
     return (
     <div>
+      <div className='add-book-button'>
+      </div>
       <HeaderComponent />
       <NavigationTabs onClickNav={this.onClickNav}/>
       <ListBooks books={this.getShowingBooks()}
