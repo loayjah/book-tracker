@@ -5,6 +5,7 @@ import ListBooks from './ListBooks';
 import React, { Component } from 'react';
 import NavigationTabs from './NavigationTabs';
 import SearchPage from './SearchPage';
+import { Link, Route, Routes } from 'react-router-dom'
 
 
 class App extends Component {
@@ -62,7 +63,6 @@ class App extends Component {
         },
     ], value: '?',
     currentTab: 'currentlyReading',
-    screen: 'home'
 }
 
 onChangeShelf = (event, book) => {
@@ -99,24 +99,28 @@ getShowingBooks = () => {
 
 
   render() {
-    if (this.state.screen === 'home') {
     return (
     <div>
-      <div className='add-book-button'>
-      </div>
-      <HeaderComponent />
-      <NavigationTabs onClickNav={this.onClickNav}/>
-      <ListBooks books={this.getShowingBooks()}
-                onChangeShelf={this.onChangeShelf} />
-    </div>
-    )}
-    return (
-    <div>
-      <SearchPage books={this.state.books}
+    <Routes>
+      <Route path="/" element={(
+          <div>
+            <Link to='/search' className='add-book-button'/>
+            <HeaderComponent />
+            <NavigationTabs onClickNav={this.onClickNav}/>
+            <ListBooks books={this.getShowingBooks()}
                   onChangeShelf={this.onChangeShelf} />
+          </div> )} 
+      />
+
+      <Route path='/search' element= {(
+          <div>
+            <SearchPage books={this.state.books}
+                  onChangeShelf={this.onChangeShelf} />
+          </div> )} 
+      />
+    </Routes>
     </div>
-    )}
-    
+)}
 }
 
 export default App;
