@@ -1,7 +1,7 @@
 import HeaderComponent from './HeaderComponent'
 import React, { Component } from 'react';
 import ListBooks from './ListBooks';
-
+import { Link } from 'react-router-dom'
 
 class SearchPage extends Component {
     state = {
@@ -24,8 +24,7 @@ class SearchPage extends Component {
 
         return (
             <div>
-                <div className='back-link'>
-                </div>
+                <Link to='/' className='back-link'></Link>
                 <HeaderComponent />
                 <div class="search-container">
                     <input class="search-input" type="text" placeholder="Search..."
