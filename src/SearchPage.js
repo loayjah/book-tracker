@@ -2,25 +2,29 @@ import HeaderComponent from './HeaderComponent'
 import React, { Component } from 'react';
 import ListBooks from './ListBooks';
 import { Link } from 'react-router-dom'
+import * as BooksAPI from './BooksAPI'
 
 class SearchPage extends Component {
     state = {
-        query: ''
+        query: '',
+        books: []
     }
 
     updateQuery = (query) => {
-        this.setState({ query: query })
+        this.setState({ query: query }, this.updateBooks(query))
+    }
+
+    updateBooks = (query) => {
+        BooksAPI.search(!!query.trim() ? query.trim() : "*").then((showingBooks) => {
+            this.setState({
+                books: (showingBooks !== undefined && Array.isArray(showingBooks)) ? showingBooks : []
+            }, ()=>{})
+        })
     }
 
     render() {
-        const { query } = this.state;
-        const { books } = this.props;
 
-        const showingBooks = query === ''
-        ? books
-        : books.filter((b) => (
-            b.title.toLowerCase().includes(query.toLowerCase())
-        ))
+        const { query, books } = this.state;
 
         return (
             <div>
@@ -31,7 +35,7 @@ class SearchPage extends Component {
                            value={query}
                            onChange={(event) => this.updateQuery(event.target.value)}/>
                 </div>
-                <ListBooks books={showingBooks}
+                <ListBooks books={books}
                 onChangeShelf={this.props.onChangeShelf} />
             </div>
         )

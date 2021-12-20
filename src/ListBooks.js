@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+var has = require('lodash.has');
 
 class ListBooks extends Component {
 
@@ -7,23 +7,41 @@ class ListBooks extends Component {
         return bookShelf === thisValue ? 'true' : undefined;
     }
 
-    render() {
+    authorTitle = (bookAuthors) => {
+        let authorsTitle = ''
+        if (bookAuthors.length > 0) {
+            authorsTitle += 'By ' + bookAuthors[0]
+        }
+        if (bookAuthors.length > 1) {
+            authorsTitle += ", et al."
+        }
         
+        return authorsTitle
+    }
+    
+    render() {
         const { books, onChangeShelf } = this.props
 
         return (
             <div className='list-items-grid'>
-                { books.map(book => {
-                        return(
-                    <div className='list-item' key={book.title}>
+                { books.map((book, index) => {
+                    if (!has(book, 'title')) return (<div></div>)
+
+                    const bookInfo = {
+                        thumbnail: has(book, 'imageLinks.thumbnail') ? book.imageLinks.thumbnail : "",
+                        authors:  has(book, 'authors') ? this.authorTitle(book.authors) : "",
+                    }
+
+                return(
+                    <div className='list-item' key={index}>
                         <div className='book-info-container'>
                             <div className='info-wrapper'>
-                                <img className='book-img' src={book.thumbnail}></img>
+                                <img className='book-img' src={bookInfo.thumbnail}></img>
                                 <div className='book-header'>
                                     <h3 className='book-title'>{book.title}</h3>
                                     <p className='book-rating'>{book.averageRating}</p>
                                 </div>
-                                <p className='book-author'>By {book.author}</p>
+                                <p className='book-author' >{bookInfo.authors}</p>
                             </div>
                             <div className='form-container'>
                                 <form>
