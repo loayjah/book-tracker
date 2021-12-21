@@ -26,7 +26,7 @@ class ListBooks extends Component {
             <div className='list-items-grid'>
                 { books.map((book, index) => {
                     if (!has(book, 'title')) return (<div></div>)
-
+                    
                     const bookInfo = {
                         thumbnail: has(book, 'imageLinks.thumbnail') ? book.imageLinks.thumbnail : "",
                         authors:  has(book, 'authors') ? this.authorTitle(book.authors) : "",
@@ -46,10 +46,10 @@ class ListBooks extends Component {
                             <div className='form-container'>
                                 <form>
                                     <select onChange={(e) => onChangeShelf(e, book)} className='select-form' name="labels" id="lables">
+                                        <option value="none" selected={this.isSelected('none', book.shelf)}>None</option>
                                         <option value="currentlyReading" selected={this.isSelected('currentlyReading', book.shelf)}>Currently reading</option>
                                         <option value="wantToRead" selected={this.isSelected('wantToRead', book.shelf)}>Want to read</option>
                                         <option value="read" selected={this.isSelected('read', book.shelf)}>Read</option>
-                                        <option value="none" selected={this.isSelected('none', book.shelf)}>None</option>
                                     </select>
                                 </form>
                                 <div> <p>{book.shelf}</p> </div>
