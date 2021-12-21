@@ -20,16 +20,25 @@ class ListBooks extends Component {
     }
     
     render() {
-        const { books, onChangeShelf } = this.props
+        const { books, onChangeShelf, booksInShelves } = this.props
 
         return (
             <div className='list-items-grid'>
                 { books.map((book, index) => {
                     if (!has(book, 'title')) return (<div></div>)
-                    
+
+                    var showingBook = book
+
+                    if(!!booksInShelves) {
+                        var bookInShleves = booksInShelves.filter((b) => (b.id === book.id))[0]
+                        if (bookInShleves !== undefined) {
+                            showingBook = bookInShleves
+                        }
+                    }
+
                     const bookInfo = {
-                        thumbnail: has(book, 'imageLinks.thumbnail') ? book.imageLinks.thumbnail : "",
-                        authors:  has(book, 'authors') ? this.authorTitle(book.authors) : "",
+                        thumbnail: has(showingBook, 'imageLinks.thumbnail') ? showingBook.imageLinks.thumbnail : "",
+                        authors:  has(showingBook, 'authors') ? this.authorTitle(showingBook.authors) : "",
                     }
 
                 return(
@@ -38,21 +47,21 @@ class ListBooks extends Component {
                             <div className='info-wrapper'>
                                 <img className='book-img' src={bookInfo.thumbnail}></img>
                                 <div className='book-header'>
-                                    <h3 className='book-title'>{book.title}</h3>
-                                    <p className='book-rating'>{book.averageRating}</p>
+                                    <h3 className='book-title'>{showingBook.title}</h3>
+                                    <p className='book-rating'>{showingBook.averageRating}</p>
                                 </div>
                                 <p className='book-author' >{bookInfo.authors}</p>
                             </div>
                             <div className='form-container'>
                                 <form>
-                                    <select onChange={(e) => onChangeShelf(e, book)} className='select-form' name="labels" id="lables">
-                                        <option value="none" selected={this.isSelected('none', book.shelf)}>None</option>
-                                        <option value="currentlyReading" selected={this.isSelected('currentlyReading', book.shelf)}>Currently reading</option>
-                                        <option value="wantToRead" selected={this.isSelected('wantToRead', book.shelf)}>Want to read</option>
-                                        <option value="read" selected={this.isSelected('read', book.shelf)}>Read</option>
+                                    <select onChange={(e) => onChangeShelf(e, showingBook)} className='select-form' name="labels" id="lables">
+                                        <option value="none" selected={this.isSelected('none', showingBook.shelf)}>None</option>
+                                        <option value="currentlyReading" selected={this.isSelected('currentlyReading', showingBook.shelf)}>Currently reading</option>
+                                        <option value="wantToRead" selected={this.isSelected('wantToRead', showingBook.shelf)}>Want to read</option>
+                                        <option value="read" selected={this.isSelected('read', showingBook.shelf)}>Read</option>
                                     </select>
                                 </form>
-                                <div> <p>{book.shelf}</p> </div>
+                                <div> <p>{showingBook.shelf}</p> </div>
                             </div>
                         </div>
                     </div>)

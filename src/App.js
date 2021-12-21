@@ -30,10 +30,6 @@ onChangeShelf = (event, book) => {
     books: prevState.books.map(
       b => b.title === book.title ? { ...b, shelf: event.target.value } : b
     ),
-
-    value: prevState.books.map(
-        b => b.title === book.title ? b.shelf : ""
-      ),
   
   }))
   
@@ -76,9 +72,9 @@ getShowingBooks = () => {
 
       <Route path='/search' element= {(
           <div>
-            <SearchPage books={this.state.books}
-                  onChangeShelf={this.onChangeShelf} />
-          </div> )} 
+            <SearchPage booksInShelves={this.state.books}
+                  onChangeShelf={this.onChangeShelf} />          
+                  </div> )} 
       />
     </Routes>
     </div>
