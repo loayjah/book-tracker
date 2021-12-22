@@ -10,9 +10,9 @@ export default function NavigationTabs(props) {
     
     const items = allItems.map((item) => (Object.keys(item)))[0]
 
-    const [currentTab, setTab] = useState(items[1]);
+    const [currentTab, setTab] = useState(Object.keys(allItems[0]).find(key => allItems[0][key] === props.currentTab));
     
-    const [selectedTab, setSelectedTab] = useTabs(items, items[1]);
+    const [selectedTab, setSelectedTab] = useTabs(items, currentTab);
 
     const changeTab = (e, item) => {
         e.preventDefault();
