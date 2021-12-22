@@ -64,7 +64,7 @@ getShowingBooks = () => {
           <div>
             <Link to='/search' className='add-book-button'/>
             <HeaderComponent />
-            <NavigationTabs onClickNav={this.onClickNav}/>
+            <NavigationTabs currentTab={this.state.currentTab} onClickNav={this.onClickNav}/>
             <ListBooks books={this.getShowingBooks()}
                   onChangeShelf={this.onChangeShelf} />
           </div> )} 
