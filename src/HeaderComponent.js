@@ -10,6 +10,8 @@ class HeaderComponent extends Component {
                 <h1 className='page-title'>Booklet</h1>
                 <p className='page-subtitle'>Your best book tracker app!</p>
             </div>
+            <div className="bottom-right"></div>
+            <div className="bottom-left"></div>
             </header>
         )
     }

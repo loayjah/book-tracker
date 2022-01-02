@@ -24,6 +24,18 @@ export default function NavigationTabs(props) {
         setSelectedTab(target);
 
         setTab(item);
+
+        if (item === 'All') {
+          document.getElementsByClassName('bottom-left')[0].style.backgroundColor = '#e9e0d3'
+        }
+        else if (item === 'Read') {
+          document.getElementsByClassName('bottom-right')[0].style.backgroundColor = '#e9e0d3'
+        }
+        else {
+          document.getElementsByClassName('bottom-right')[0].style.backgroundColor = '#FAF8F5'
+          document.getElementsByClassName('bottom-left')[0].style.backgroundColor = '#FAF8F5'
+        }
+
         props.onClickNav(allItems[0][item])
       };
     
@@ -42,8 +54,8 @@ export default function NavigationTabs(props) {
                   <a className='link'
                     key={item}
                     style={{
-                        color: selectedTab === item ? "red" : "black",
-                        background: selectedTab === item ? "#fcfcfc" : "#fff"
+                        color: selectedTab === item ? "green" : "black",
+                        background: selectedTab === item ? "#e9e0d3" : "#FAF8F5"
                     }}
                     onClick={(e) => currentTab !== item ? changeTab(e, item) : ()=>{}}
                     data-tab={item}
