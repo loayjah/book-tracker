@@ -7,7 +7,7 @@ class HeaderComponent extends Component {
         return (
             <header className='title-header'>
             <div className='title-container'>
-                <h1 className='page-title'>Booklet</h1>
+                <h1 className='page-title'>The Booklet</h1>
                 <p className='page-subtitle'>Your best book tracker app!</p>
             </div>
             <div className="bottom-right"></div>
