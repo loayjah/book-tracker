@@ -33,6 +33,24 @@ body, .app {
   border-radius: 0px 0px 30px 30px;
 }
 
+.bottom-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 50%;
+  z-index: -10;
+}
+
+.bottom-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 50%;
+  z-index: -10;
+}
+
 .title-container {
   position: absolute;
   top: 50%;
