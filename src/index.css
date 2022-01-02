@@ -163,10 +163,12 @@ body, .app {
 }
 
 .link {
-  flex-grow: 1;
-  display: block;
+  display: flex;
   padding: 1rem;
-  text-decoration: none;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .nav-tabs-container {
