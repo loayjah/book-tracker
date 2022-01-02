@@ -154,7 +154,7 @@ body, .app {
   position: absolute;
   bottom: 0;
   height: 2px;
-  background-color: red;
+  background-color: #008000;
   transition: all ease 0.2s;
 }
 

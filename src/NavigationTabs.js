@@ -42,8 +42,8 @@ export default function NavigationTabs(props) {
                   <a className='link'
                     key={item}
                     style={{
-                        color: selectedTab === item ? "red" : "black",
-                        background: selectedTab === item ? "#fcfcfc" : "#fff"
+                        color: selectedTab === item ? "green" : "black",
+                        background: selectedTab === item ? "#e9e0d3" : "#FAF8F5"
                     }}
                     onClick={(e) => currentTab !== item ? changeTab(e, item) : ()=>{}}
                     data-tab={item}
