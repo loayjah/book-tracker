@@ -27,9 +27,11 @@ export default function NavigationTabs(props) {
 
         if (item === 'All') {
           document.getElementsByClassName('bottom-left')[0].style.backgroundColor = '#e9e0d3'
+          document.getElementsByClassName('bottom-right')[0].style.backgroundColor = '#FAF8F5'
         }
         else if (item === 'Read') {
           document.getElementsByClassName('bottom-right')[0].style.backgroundColor = '#e9e0d3'
+          document.getElementsByClassName('bottom-left')[0].style.backgroundColor = '#FAF8F5'
         }
         else {
           document.getElementsByClassName('bottom-right')[0].style.backgroundColor = '#FAF8F5'
