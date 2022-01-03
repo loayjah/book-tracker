@@ -37,7 +37,8 @@ class SearchPage extends Component {
                 </div>
                 <ListBooks books={books}
                 onChangeShelf={this.props.onChangeShelf}
-                booksInShelves={this.props.booksInShelves}/>
+                booksInShelves={this.props.booksInShelves}
+                query={query}/>
             </div>
         )
     }
