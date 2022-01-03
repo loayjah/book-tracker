@@ -250,6 +250,21 @@ body, .app {
   background-color: white;
 }
 
+/* Ipad vertical Responsive */
+@media only screen and (max-width: 900px) {
+  .book-info-container {
+    width: 190px;
+  }
+
+  .book-img {
+    height: 220px;
+  }
+
+  .search-input {
+    width: 88%;
+  }
+
+}
 
 /* Mobile Responsive */
 @media only screen and (max-width: 400px) {
@@ -304,20 +319,4 @@ body, .app {
   .search-input {
     width: 90%;
   }
-}
-
-/* Ipad vertical Responsive */
-@media only screen and (max-width: 900px) {
-  .book-info-container {
-    width: 190px;
-  }
-
-  .book-img {
-    height: 220px;
-  }
-
-  .search-input {
-    width: 88%;
-  }
-
 }
