@@ -249,3 +249,75 @@ body, .app {
   z-index: 101;
   background-color: white;
 }
+
+
+/* Mobile Responsive */
+@media only screen and (max-width: 400px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .title-header {
+    height: 179px;
+  }
+
+  .back-link {
+  top: 0;
+  left: 0;
+  }
+
+  .book-info-container {
+    width: 120px;
+  }
+
+  .book-img {
+    height: 146px;
+  }
+
+  .list-item {
+    padding: 10px;
+  }
+
+  .book-title {
+    padding-right: 10px;
+  }
+
+  .book-author {
+    font-size: 12px;
+  }
+
+  .select-form {
+    line-height: 1em;
+    padding: 0.5em;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    background-image: none;
+  }
+
+  .search-container {
+    padding-top: 32px;
+  }
+  .search-input {
+    width: 90%;
+  }
+}
+
+/* Ipad vertical Responsive */
+@media only screen and (max-width: 900px) {
+  .book-info-container {
+    width: 190px;
+  }
+
+  .book-img {
+    height: 220px;
+  }
+
+  .search-input {
+    width: 88%;
+  }
+
+}
