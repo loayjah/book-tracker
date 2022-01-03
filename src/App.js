@@ -25,16 +25,23 @@ componentDidMount() {
   })
   }
 
-onChangeShelf = (event, book) => {
-  this.setState(prevState => ({
-    books: prevState.books.map(
-      b => b.title === book.title ? { ...b, shelf: event.target.value } : b
-    ),
+  onChangeShelf = (event, book) => {
+    
+    if (this.state.books.filter(b => b.title === book.title).length < 1) {
+      this.setState({ books: [...this.state.books, {...book, shelf: event.target.value }]}, ()=> {})
+    }
   
-  }))
+    else {
+    this.setState(prevState => ({
+      books: prevState.books.map(
+        b => b.title === book.title ? { ...b, shelf: event.target.value } : b
+      ),
+    
+    }), ()=> {})
+    }
   
-  BooksAPI.update(book, event.target.value)
-};
+    BooksAPI.update(book, event.target.value)
+  };
 
 onClickNav = (value) => {
   this.setState({
