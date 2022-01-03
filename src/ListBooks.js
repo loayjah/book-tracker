@@ -61,7 +61,6 @@ class ListBooks extends Component {
                                         <option value="read">Read</option>
                                     </select>
                                 </form>
-                                <div> <p>{showingBook.shelf}</p> </div>
                             </div>
                         </div>
                     </div>)
