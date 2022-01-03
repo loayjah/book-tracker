@@ -54,11 +54,11 @@ class ListBooks extends Component {
                             </div>
                             <div className='form-container'>
                                 <form>
-                                    <select onChange={(e) => onChangeShelf(e, showingBook)} className='select-form' name="labels" id="lables">
-                                        <option value="none" selected={this.isSelected('none', showingBook.shelf)}>None</option>
-                                        <option value="currentlyReading" selected={this.isSelected('currentlyReading', showingBook.shelf)}>Currently reading</option>
-                                        <option value="wantToRead" selected={this.isSelected('wantToRead', showingBook.shelf)}>Want to read</option>
-                                        <option value="read" selected={this.isSelected('read', showingBook.shelf)}>Read</option>
+                                    <select value={showingBook.shelf} onChange={(e) => onChangeShelf(e, showingBook)} className='select-form'>
+                                        <option value="none">None</option>
+                                        <option value="currentlyReading">Currently reading</option>
+                                        <option value="wantToRead">Want to read</option>
+                                        <option value="read">Read</option>
                                     </select>
                                 </form>
                                 <div> <p>{showingBook.shelf}</p> </div>
