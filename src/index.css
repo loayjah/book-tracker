@@ -250,6 +250,11 @@ body, .app {
   background-color: white;
 }
 
+.no-books-existed {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
 /* Ipad vertical Responsive */
 @media only screen and (max-width: 900px) {
   .book-info-container {
