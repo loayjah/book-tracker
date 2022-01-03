@@ -249,3 +249,48 @@ body, .app {
   z-index: 101;
   background-color: white;
 }
+
+
+/* Mobile Responsive */
+@media only screen and (max-width: 400px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .title-header {
+    height: 25vh;
+  }
+
+  .book-info-container {
+    width: 120px;
+  }
+
+  .book-img {
+    height: 146px;
+  }
+
+  .list-item {
+    padding: 10px;
+  }
+
+  .book-title {
+    padding-right: 10px;
+  }
+
+  .book-author {
+    font-size: 12px;
+  }
+
+  .select-form { /* source: https://codepen.io/vkjgr/pen/VYMeXp */
+    line-height: 1em;
+    padding: 0.5em;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    background-image: none;
+  }
+
+}
