@@ -262,7 +262,12 @@ body, .app {
   }
 
   .title-header {
-    height: 25vh;
+    height: 179px;
+  }
+
+  .back-link {
+  top: 0;
+  left: 0;
   }
 
   .book-info-container {
@@ -285,7 +290,7 @@ body, .app {
     font-size: 12px;
   }
 
-  .select-form { /* source: https://codepen.io/vkjgr/pen/VYMeXp */
+  .select-form {
     line-height: 1em;
     padding: 0.5em;
     -webkit-appearance: auto;
@@ -293,4 +298,10 @@ body, .app {
     background-image: none;
   }
 
+  .search-container {
+    padding-top: 32px;
+  }
+  .search-input {
+    width: 90%;
+  }
 }
